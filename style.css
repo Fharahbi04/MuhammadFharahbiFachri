@@ -23,6 +23,8 @@ body { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Sego
 .section h2 { font-size: 2rem; margin-bottom: 1rem; color: #f0f6ff; }
 .skills-grid, .project-grid, .cert-grid { display: grid; gap: 1.25rem; }
 .skills-grid, .cert-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.project-grid { grid-template-columns: repeat(3, 1fr); }
+.project-image { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 0.75rem; display: block; }
 .skill-card, .project-card, .cert-card { border: 1px solid #27313f; background: var(--surface); border-radius: 14px; padding: 1.15rem; }
 .skill-card h3, .project-card h3, .cert-card h3 { margin-bottom: 0.5rem; }
 .skill-card p, .project-card p, .cert-card p { color: var(--muted); }
@@ -38,4 +40,10 @@ body { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Sego
   .nav { position: absolute; top: 100%; right: 0; left: 0; background: var(--surface); border-top: 1px solid #212b3c; flex-direction: column; align-items: flex-start; padding: 0.7rem; display: none; }
   .nav.show { display: flex; }
   .section { padding: 3rem 0; }
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .project-grid { grid-template-columns: 1fr; }
+  .project-image { height: 220px; }
 }
